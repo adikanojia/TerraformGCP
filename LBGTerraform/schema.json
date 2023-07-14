@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Item Name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "Quantity Sold",
+        "type": "INT64",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "Price per Unit",
+        "type": "FLOAT64",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "Fun Level",
+        "type": "FLOAT64",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "Date Manufactured",
+        "type": "DATE",
+        "mode": "NULLABLE"
+    }
+]
