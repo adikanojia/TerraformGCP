@@ -58,3 +58,33 @@ http://broadoakdata.uk/load-data-bigquery-terraform/
 Creating the BigQuery dataset wasn’t too difficult after learning how schemas and csv files work. I made my own dataset in a csv file and made my own schema.  
 
 But then I ran into the main challenge of this task -- partitioning. After hours of research and testing I still couldn’t find a way to partition the data. What annoys me is that I see complex examples of code which incorporate partitioning directly from Terraform into filled datsets, but I just don’t understand the code at all. So I decided I’ll just make two separate tables. One where I import my dataset and an empty dataset with partitions. This section was by far the most challenging but it was fun to play with the data and create your own schema. Once I understood how to import data into new BigQuery tables, the task wasn't too difficult. I made the first letter of all the data items spell out Lloyd’s Banking Group.  Once all the tasks were completed I spent some time understanding the theory behind all the infrasture from Cloud Guru videos and how the reources work together to facilitate a complete machine learning pipeline. I also tried to manipulate the data using Vertex AI but again this seemed impossible to do directly from Terraform.
+
+Google Vertex AI notebooks, Google Cloud Storage buckets, and BigQuery datasets can be used together in a project to facilitate a complete machine learning pipeline. Here's a high-level overview of how these components can work together: 
+
+Data Storage and Preprocessing: 
+
+Data is stored in Google Cloud Storage buckets, providing a scalable and durable storage solution for your raw or processed data. You can upload, organize, and manage your datasets within buckets. 
+
+If required, you can preprocess and transform the data using tools or libraries of your choice, potentially utilizing Google Cloud Dataflow or other data processing services. 
+
+Data Analysis and Modeling: 
+
+Google Vertex AI notebooks provide an interactive and collaborative environment to develop and experiment with machine learning models. You can use notebooks to write and execute code, explore data, build and train models, and analyze results. 
+
+The notebooks can read data from Google Cloud Storage buckets or directly from BigQuery datasets. You can leverage BigQuery's SQL capabilities to perform data analysis, create derived datasets, and extract features for modeling. 
+
+Model Training and Deployment: 
+
+Once you have developed and tested your machine learning models within the Vertex AI notebooks, you can train them using the powerful distributed training capabilities of Google Vertex AI. 
+
+During training, you can fetch and preprocess data from BigQuery datasets or Google Cloud Storage buckets, feeding it to the training job. 
+
+After training, you can deploy the trained models as Vertex AI endpoints for real-time predictions or batch predictions, depending on your use case. 
+
+Data Warehousing and Analytics: 
+
+BigQuery datasets act as a data warehouse, enabling scalable and performant analytics on large datasets. You can store processed data, intermediate results, or aggregated data from various sources within BigQuery datasets. 
+
+The processed or transformed data can be loaded into BigQuery tables for further analysis, reporting, and visualization. You can run SQL queries, build complex analytics pipelines, or connect BigQuery to visualization tools like Google Data Studio for data exploration and reporting. 
+
+By combining Google Vertex AI notebooks, Google Cloud Storage buckets, and BigQuery datasets, you can seamlessly integrate the different stages of your machine learning pipeline—from data storage and preprocessing to analysis, modeling, and deployment—providing a unified and scalable environment for end-to-end machine learning workflows within the Google Cloud platform. 
